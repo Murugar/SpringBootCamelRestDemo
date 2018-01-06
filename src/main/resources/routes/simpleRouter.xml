@@ -1,0 +1,7 @@
+<routes xmlns="http://camel.apache.org/schema/spring">
+    <route id="test">
+        <from uri="timer:hello?period={{timer.period}}"/>
+        <bean ref="myBean" method="saySomething2"/>
+        <to uri="stream:out"/>
+    </route>
+</routes>
